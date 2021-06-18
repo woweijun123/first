@@ -1,0 +1,22 @@
+{
+  "name": "riven/first_composer",
+  "description": "riven first composer",
+  "authors": [
+    {
+      "name": "riven",
+      "email": "1054487195@qq.com"
+    }
+  ],
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "riven\\": "src/"
+    },
+    "files": [
+      "src/function.php"
+    ]
+  }
+}
