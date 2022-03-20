@@ -1,5 +1,5 @@
 <?php
-namespace riven;
+namespace riven\common;
 
 class Test {
     public static function t1()
