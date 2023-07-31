@@ -1,23 +1,36 @@
 {
-  "name": "wcj/first",
-  "description": "riven first composer",
-  "authors": [
-    {
-      "name": "riven",
-      "email": "1054487195@qq.com"
-    }
-  ],
-  "license": "MIT",
-  "require": {
-    "php": ">=7.2",
-    "guzzle/guzzle": "^3.9"
-  },
-  "autoload": {
-    "psr-4": {
-      "riven\\": "src/"
+    "name": "wcj/first",
+    "description": "riven first composer",
+    "authors": [
+        {
+            "name": "riven",
+            "email": "1054487195@qq.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "guzzle/guzzle": "^3.9"
     },
-    "files": [
-      "src/function.php"
-    ]
-  }
+    "require-dev": {
+        "phpunit/phpunit": "*",
+        "ext-mbstring": "*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "./tests"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "riven\\": "./src"
+        },
+        "files": [
+        ]
+    },
+    "scripts": {
+        "test": "phpunit --prepend test/bootstrap.php -c phpunit.xml --colors=always",
+        "analyze": "phpstan analyse --memory-limit 300M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    }
 }
